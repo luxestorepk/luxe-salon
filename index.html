@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luxury Black Gold Beauty Salon Lahore | Bridal & Party Makeup</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#060606;color:#fff;font-family:'Poppins',sans-serif;overflow-x:hidden}
+.header{text-align:center;padding:40px 20px 10px;background:radial-gradient(ellipse at top, #1a1a0a 0%, #060606 70%)}
+.header h1{font-family:'Playfair Display',serif;color:#d4af37;font-size:38px;line-height:1.2;letter-spacing:1px;text-shadow:0 2px 20px rgba(212,175,55,0.3)}
+.header span{color:#fff}
+.header p{color:#9a9a9a;margin-top:12px;font-size:15px;letter-spacing:0.5px}
+.gallery{max-width:1250px;margin:30px auto;display:grid;grid-template-columns:repeat(3,1fr);gap:22px;padding:0 20px}
+.card{position:relative;background:#101010;border-radius:18px;overflow:hidden;border:1px solid rgba(212,175,55,0.35);transition:all .35s ease}
+.card:hover{transform:translateY(-8px);border-color:#d4af37;box-shadow:0 15px 40px rgba(212,175,55,0.25)}
+.card img{width:100%;height:420px;object-fit:cover;display:block;transition:transform .5s}
+.card:hover img{transform:scale(1.05)}
+.card .overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent, rgba(0,0,0,0.9));padding:55px 15px 15px}
+.card .title{font-family:'Playfair Display',serif;color:#d4af37;font-size:18px;font-weight:600}
+.card .subtitle{color:#ddd;font-size:12px;margin-top:2px}
+.badge{position:absolute;top:12px;left:12px;background:#d4af37;color:#000;font-size:11px;font-weight:700;padding:5px 10px;border-radius:20px}
+/* WhatsApp Clear */
+.wa-btn{position:fixed;right:20px;bottom:20px;z-index:10000;background:#25D366;width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:32px;text-decoration:none;box-shadow:0 8px 25px rgba(37,211,102,0.4);animation:waPulse 2s infinite}
+@keyframes waPulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,0.7)}70%{box-shadow:0 0 0 15px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+/* AI Chatbot Clear */
+.ai-btn{position:fixed;left:20px;bottom:20px;z-index:10000;background:linear-gradient(135deg,#d4af37,#8a6a14);width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#000;font-weight:800;font-size:20px;cursor:pointer;box-shadow:0 8px 25px rgba(212,175,55,0.5);font-family:'Playfair Display',serif}
+.chat-box{position:fixed;left:20px;bottom:95px;z-index:10000;width:360px;max-width:calc(100vw - 30px);height:460px;background:#0f0f0f;border:1px solid #d4af37;border-radius:18px;display:none;flex-direction:column;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.8)}
+.chat-head{background:linear-gradient(90deg,#d4af37,#b8962e);color:#000;padding:14px;text-align:center;font-weight:700;font-family:'Playfair Display',serif}
+.chat-body{flex:1;overflow-y:auto;padding:14px;font-size:14px;line-height:1.5}
+.msg-bot{background:#1c1c1c;border-left:3px solid #d4af37;padding:10px 12px;border-radius:10px;margin:8px 0;color:#e5e5e5}
+.msg-user{background:#d4af37;color:#000;padding:10px 12px;border-radius:10px;margin:8px 0;text-align:right;font-weight:500}
+.chat-input{display:flex;border-top:1px solid #222;background:#000}
+.chat-input input{flex:1;background:transparent;border:none;color:#fff;padding:14px 12px;outline:none}
+.chat-input button{background:#d4af37;border:none;color:#000;font-weight:700;padding:0 20px;cursor:pointer}
+.footer{text-align:center;padding:30px 20px;color:#666;font-size:12px;border-top:1px solid #111;margin-top:40px}
+@media(max-width:900px){.gallery{grid-template-columns:repeat(2,1fr);gap:14px}.card img{height:300px}.header h1{font-size:28px}}
+@media(max-width:480px){.gallery{grid-template-columns:1fr 1fr;gap:10px;padding:0 10px}.card img{height:240px}.card .title{font-size:14px}.header h1{font-size:22px}}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>LUXURY <span>BLACK & GOLD</span><br>BEAUTY SALON</h1>
+  <p>Premium Bridal • Party Glam • Casual Mehndi & Nails — Lahore's Most Luxurious Salon Chairs</p>
+</div>
+
+<div class="gallery" id="gallery"></div>
+
+<div class="footer">© 2026 Luxury Black Gold Salon | WhatsApp: 03716649231 | Lahore, Pakistan</div>
+
+<!-- WhatsApp Clear Button - Your Number 03716649231 -->
+<a class="wa-btn" href="https://wa.me/923716649231?text=Salam%21%20Mujhe%20Luxury%20Salon%20ki%20booking%20karni%20hai%20%F0%9F%92%84" target="_blank" aria-label="WhatsApp">💬</a>
+
+<!-- AI Chatbot Clear - Har Sawal Ka Jawab -->
+<div class="ai-btn" onclick="toggleAI()">AI</div>
+<div class="chat-box" id="chatBox">
+  <div class="chat-head">✨ Luxury Salon AI Assistant</div>
+  <div class="chat-body" id="chatBody">
+    <div class="msg-bot">Salam Waqas bhai ki client! 💄 Main AI assistant hun. Bridal, mehndi, nails, hair, price, location - jo bhi pochna hai pochen, main foran jawab dungi!</div>
+  </div>
+  <div class="chat-input">
+    <input id="chatInput" placeholder="Apna sawal likhen..." onkeydown="if(event.key==='Enter')sendAI()">
+    <button onclick="sendAI()">Send</button>
+  </div>
+</div>
+
+<script>
+// FINAL GALLERY - salon1.jpg to salon6.jpg - Jo naam rakho ge wo open hogi
+const data=[
+  {t:"Royal Bridal Makeup",s:"Luxury Black Gold Chair"},
+  {t:"Bridal Hair Styling",s:"Premium Bridal Look"},
+  {t:"Trendy Mehndi Design",s:"For Every Girl"},
+  {t:"Party Glam Makeup",s:"Stylish Party Look"},
+  {t:"Luxury Nail Art",s:"Casual & Bridal"},
+  {t:"Modern Hair Styling",s:"Cut, Color & Keratin"}
+];
+const gal=document.getElementById('gallery');
+for(let i=1;i<=6;i++){
+  const d=data[i-1];
+  const card=document.createElement('div');card.className='card';
+  card.innerHTML=`<div class="badge">SALON ${i}</div><img src="./salon${i}.jpg" alt="${d.t}" loading="lazy" onerror="if(this.src.endsWith('.jpg')){this.src='./salon${i}.JPG'}else{this.src='./salon${i}.jpeg'}"><div class="overlay"><div class="title">${d.t}</div><div class="subtitle">${d.s}</div></div>`;
+  gal.appendChild(card);
+}
+// AI CHATBOT LOGIC - Har Sawal Ka Jawab
+function toggleAI(){const b=document.getElementById('chatBox');b.style.display=b.style.display==='flex'?'none':'flex';}
+function sendAI(){
+  const inp=document.getElementById('chatInput');const txt=inp.value.trim();if(!txt)return;
+  const body=document.getElementById('chatBody');body.innerHTML+=`<div class="msg-user">${txt}</div>`;inp.value='';
+  const q=txt.toLowerCase();let r="";
+  if(q.includes('salam')||q.includes('hello')||q.includes('hi')) r="Walaikum Salam! 💖 Luxury Black Gold Salon me khush amdeed! Bridal, party ya casual service chahiye?";
+  else if(q.includes('bridal')||q.includes('dulhan')) r="Bridal Makeup 15k-35k full package (makeup+hair+mehndi+nails) luxury black gold chair pe. 03716649231 pe WhatsApp karen booking ke liye!";
+  else if(q.includes('mehndi')||q.includes('henna')) r="Mehndi casual Rs.500 se start, bridal heavy Rs.5000 tak. Design book available hai, expert artist hain.";
+  else if(q.includes('nail')) r="Nail art Rs.1000 se, extension Rs.2500 se, chrome & gel available. Luxury salon chair pe service!";
+  else if(q.includes('hair')||q.includes('baal')||q.includes('cut')||q.includes('color')) r="Hair cut Rs.800, color Rs.3000+, keratin/smoothening Rs.8000+. Modern & bridal dono styles expert!";
+  else if(q.includes('price')||q.includes('rate')||q.includes('charges')||q.includes('kitne')) r="Price List: Bridal 15k-35k, Party Makeup 5k-10k, Mehndi 500-5000, Hair 800-8000, Nails 1000-4000. Final quote WhatsApp 03716649231 pe!";
+  else if(q.includes('location')||q.includes('address')||q.includes('kahan')||q.includes('lahore')) r="Lahore me hain! Exact location WhatsApp 03716649231 pe bhej den ge. Home service bhi available hai Lahore me!";
+  else if(q.includes('time')||q.includes('timing')||q.includes('open')||q.includes('kab')) r="Timing: 10am-10pm, 7 days open. Eid & wedding season pe late night 1am tak open!";
+  else if(q.includes('booking')||q.includes('book')||q.includes('appointment')) r="Booking ke liye WhatsApp button pe click karen ya 03716649231 pe message karen. Date & time bhej den, confirm kar den ge!";
+  else r=`Aapne "${txt}" pocha - hamari luxury salon me Bridal, Party, Mehndi, Nails, Hair sab services luxury black gold theme me hain. Price 500 se 35k tak. WhatsApp 03716649231 pe detail le len! ✨`;
+  body.innerHTML+=`<div class="msg-bot">${r}</div>`;body.scrollTop=body.scrollHeight;
+}
+</script>
+</body>
+</html>

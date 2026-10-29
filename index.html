@@ -8,79 +8,32 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#000;color:#fff;font-family:'Poppins',sans-serif;-webkit-font-smoothing:antialiased}
-
 .header{text-align:center;padding:38px 18px 15px;background:#000;border-bottom:1px solid #1a1505}
 .header h1{font-family:'Playfair Display',serif;color:#d4af37;font-size:23px;line-height:1.25;letter-spacing:1px}
 .header p{color:#777;font-size:11px;margin-top:10px;letter-spacing:0.4px;line-height:1.5}
-
-.services-container{
-  display:flex;
-  flex-direction:column;
-  gap:32px;
-  padding:22px 14px 110px 14px;
-  max-width:480px;
-  margin:0 auto;
-}
-.service-card{
-  background:#0d0d0d;
-  border:1px solid #211d0a;
-  border-radius:20px;
-  overflow:hidden;
-  box-shadow:0 8px 25px rgba(0,0,0,0.8), 0 0 20px rgba(212,175,55,0.08);
-}
-.service-card img{
-  width:100%;
-  height:260px;
-  object-fit:cover;
-  display:block;
-  background:#111;
-}
-.service-card .info{
-  padding:16px 18px 18px 18px;
-  background:#0d0d0d;
-  border-top:1px solid #1a1608;
-}
-.service-card .info h3{
-  color:#d4af37;
-  font-family:'Playfair Display',serif;
-  font-size:17px;
-  font-weight:700;
-  margin-bottom:3px;
-}
-.service-card .info p{
-  color:#888;
-  font-size:11.5px;
-  font-weight:400;
-}
-
-/* WhatsApp Button */
-.whatsapp-btn{
-  position:fixed;bottom:22px;right:16px;
-  background:#25D366;width:56px;height:56px;
-  border-radius:50%;display:flex;align-items:center;justify-content:center;
-  font-size:26px;z-index:9999;
-  box-shadow:0 6px 20px rgba(37,211,102,0.45);
-  text-decoration:none;
-  animation:pulse 2s infinite;
-}
-/* AI Button */
-.ai-btn{
-  position:fixed;bottom:22px;left:16px;
-  background:linear-gradient(135deg,#d4af37 0%, #8a6d0b 100%);
-  width:56px;height:56px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  color:#000;font-weight:800;font-size:13px;letter-spacing:0.5px;
-  z-index:9999;box-shadow:0 6px 20px rgba(212,175,55,0.45);
-  cursor:pointer;
-}
-@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.05)}100%{transform:scale(1)}}
-
+.services-container{display:flex;flex-direction:column;gap:32px;padding:22px 14px 110px 14px;max-width:480px;margin:0 auto}
+.service-card{background:#0d0d0d;border:1px solid #211d0a;border-radius:20px;overflow:hidden;box-shadow:0 8px 25px rgba(0,0,0,0.8), 0 0 20px rgba(212,175,55,0.08)}
+.service-card img{width:100%;height:260px;object-fit:cover;display:block;background:#111}
+.service-card .info{padding:16px 18px 18px 18px;background:#0d0d0d;border-top:1px solid #1a1608}
+.service-card .info h3{color:#d4af37;font-family:'Playfair Display',serif;font-size:17px;font-weight:700;margin-bottom:3px}
+.service-card .info p{color:#888;font-size:11.5px;font-weight:400}
+.whatsapp-btn{position:fixed;bottom:22px;right:16px;background:#25D366;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;z-index:9999;box-shadow:0 6px 20px rgba(37,211,102,0.45);text-decoration:none}
+.ai-btn{position:fixed;bottom:22px;left:16px;background:linear-gradient(135deg,#d4af37 0%, #8a6d0b 100%);width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#000;font-weight:800;font-size:13px;z-index:9999;box-shadow:0 6px 20px rgba(212,175,55,0.45);cursor:pointer}
 .footer{text-align:center;padding:20px;color:#444;font-size:10px;padding-bottom:95px;letter-spacing:0.5px}
+@media(min-width:768px){.service-card img{height:340px}.services-container{gap:38px}}
 
-@media(min-width:768px){
-  .service-card img{height:340px}
-  .services-container{gap:38px}
-}
+/* AI CHATBOX */
+.chat-window{display:none;position:fixed;bottom:90px;left:15px;right:15px;max-width:360px;background:#111;border:1px solid #2a2110;border-radius:18px;z-index:10000;overflow:hidden;box-shadow:0 20px 40px rgba(0,0,0,0.9)}
+.chat-header{background:linear-gradient(135deg,#d4af37,#8a6d0b);padding:14px 16px;color:#000;display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:14px}
+.chat-body{height:280px;overflow-y:auto;padding:12px;background:#0a0a0a;display:flex;flex-direction:column;gap:10px}
+.msg{padding:10px 12px;border-radius:14px;font-size:12.5px;max-width:85%;line-height:1.4}
+.msg-bot{background:#1e1c12;color:#d4af37;align-self:flex-start;border:1px solid #2a2110}
+.msg-user{background:#d4af37;color:#000;align-self:flex-end;font-weight:500}
+.chat-input-area{display:flex;padding:10px;background:#111;border-top:1px solid #222}
+.chat-input-area input{flex:1;background:#000;border:1px solid #333;border-radius:20px;padding:10px 14px;color:#fff;font-size:12px;outline:none}
+.chat-input-area button{background:#d4af37;border:none;border-radius:50%;width:38px;height:38px;margin-left:8px;color:#000;font-weight:800;cursor:pointer}
+.quick-btns{display:flex;gap:6px;padding:8px 10px;background:#0a0a0a;flex-wrap:wrap}
+.quick-btns button{background:#1a180e;border:1px solid #2a2110;color:#d4af37;font-size:10.5px;padding:6px 10px;border-radius:20px;cursor:pointer}
 </style>
 </head>
 <body>
@@ -91,68 +44,68 @@ body{background:#000;color:#fff;font-family:'Poppins',sans-serif;-webkit-font-sm
 </div>
 
 <div class="services-container">
-
-  <!-- salon1 -->
-  <div class="service-card">
-    <img src="salon1.jpg" alt="Bridal Makeup">
-    <div class="info">
-      <h3>Royal Bridal Makeup</h3>
-      <p>Luxury Black Gold Chair - Premium Bridal Look</p>
-    </div>
-  </div>
-
-  <!-- salon2 - YE WALI TUMHARI BHEJI HUI IMAGE HAI -->
-  <div class="service-card">
-    <img src="salon2.jpg" alt="Hair Styling">
-    <div class="info">
-      <h3>Casual Hair Styling & Blow Dry</h3>
-      <p>Everyday Glam - Wavy & Straight Look</p>
-    </div>
-  </div>
-
-  <!-- salon3 -->
-  <div class="service-card">
-    <img src="salon3.jpg" alt="Mehndi">
-    <div class="info">
-      <h3>Trendy Mehndi Design</h3>
-      <p>For Every Girl - Bridal & Party Mehndi</p>
-    </div>
-  </div>
-
-  <!-- salon4 -->
-  <div class="service-card">
-    <img src="salon4.jpg" alt="Nail Art">
-    <div class="info">
-      <h3>Luxury Nail Art</h3>
-      <p>Casual & Bridal - Stylish Nails</p>
-    </div>
-  </div>
-
-  <!-- salon5 -->
-  <div class="service-card">
-    <img src="salon5.jpg" alt="Hair Cutting">
-    <div class="info">
-      <h3>Premium Hair Cutting & Color</h3>
-      <p>Cut, Color & Keratin - Luxury Treatment</p>
-    </div>
-  </div>
-
-  <!-- salon6 -->
-  <div class="service-card">
-    <img src="salon6.jpg" alt="Party Makeup">
-    <div class="info">
-      <h3>Party Glam Makeup</h3>
-      <p>Stylish Party Look - Modern Glam</p>
-    </div>
-  </div>
-
+  <div class="service-card"><img src="salon1.jpg" alt="Bridal"><div class="info"><h3>Royal Bridal Makeup</h3><p>Luxury Black Gold Chair - Premium Bridal Look</p></div></div>
+  <div class="service-card"><img src="salon2.jpg" alt="Hair Styling"><div class="info"><h3>Casual Hair Styling & Blow Dry</h3><p>Everyday Glam - Wavy & Straight Look</p></div></div>
+  <div class="service-card"><img src="salon3.jpg" alt="Mehndi"><div class="info"><h3>Trendy Mehndi Design</h3><p>For Every Girl - Bridal & Party Mehndi</p></div></div>
+  <div class="service-card"><img src="salon4.jpg" alt="Nail Art"><div class="info"><h3>Luxury Nail Art</h3><p>Casual & Bridal - Stylish Nails</p></div></div>
+  <div class="service-card"><img src="salon5.jpg" alt="Hair Cutting"><div class="info"><h3>Premium Hair Cutting & Color</h3><p>Cut, Color & Keratin - Luxury Treatment</p></div></div>
+  <div class="service-card"><img src="salon6.jpg" alt="Party Makeup"><div class="info"><h3>Party Glam Makeup</h3><p>Stylish Party Look - Modern Glam</p></div></div>
 </div>
 
 <div class="footer">© 2026 LUXURY BLACK & GOLD SALON | WhatsApp: 03716649231</div>
 
-<!-- FIXED BUTTONS -->
+<!-- CHAT WINDOW -->
+<div class="chat-window" id="chatWindow">
+  <div class="chat-header"><span>✨ Luxury Salon AI</span><span onclick="toggleChat()" style="cursor:pointer">✕</span></div>
+  <div class="chat-body" id="chatBody">
+    <div class="msg msg-bot">Salam! 👋 Main apki Luxury Salon Assistant hun. Apko kis service ka rate chahiye? 💄</div>
+  </div>
+  <div class="quick-btns">
+    <button onclick="sendQuick('Bridal Makeup rate?')">Bridal</button>
+    <button onclick="sendQuick('Party Makeup rate?')">Party</button>
+    <button onclick="sendQuick('Hair Cutting rate?')">Hair Cut</button>
+    <button onclick="sendQuick('Booking karni hai')">Booking</button>
+  </div>
+  <div class="chat-input-area">
+    <input type="text" id="chatInput" placeholder="Apna sawal likhein...">
+    <button onclick="sendMsg()">➤</button>
+  </div>
+</div>
+
 <a href="https://wa.me/923716649231" class="whatsapp-btn" target="_blank">💬</a>
-<div class="ai-btn" onclick="alert('AI Chatbot: Salam! Apko kis service ka rate chahiye? Bridal, Party ya Casual?')">AI</div>
+<div class="ai-btn" onclick="toggleChat()">AI</div>
+
+<script>
+let chatOpen=false;
+function toggleChat(){
+  let w=document.getElementById('chatWindow');
+  chatOpen=!chatOpen;
+  w.style.display=chatOpen?'block':'none';
+}
+function sendQuick(t){document.getElementById('chatInput').value=t; sendMsg();}
+function sendMsg(){
+  let input=document.getElementById('chatInput');
+  let body=document.getElementById('chatBody');
+  let txt=input.value.trim();
+  if(!txt) return;
+  body.innerHTML+=`<div class="msg msg-user">${txt}</div>`;
+  input.value='';
+  setTimeout(()=>{
+    let reply="Shukriya! 💖 Is service ke liye hamari team apko WhatsApp pe foran detail bhej degi: 03716649231";
+    let low=txt.toLowerCase();
+    if(low.includes('bridal')) reply="👰 Royal Bridal Makeup: 15,000 - 25,000 Rs (Luxury Black Gold Chair + Premium Products). WhatsApp pe book karein: 03716649231";
+    else if(low.includes('party')) reply="💃 Party Glam Makeup: 5,000 - 8,000 Rs. Includes Hair Styling. Date WhatsApp karein!";
+    else if(low.includes('hair')||low.includes('cut')) reply="✂️ Hair Cutting 1,500 Rs | Blow Dry 1,000 Rs | Keratin 8,000 Rs.";
+    else if(low.includes('mehndi')) reply="🌿 Mehndi Design: 500 - 3,000 Rs. Bridal + Party both available.";
+    else if(low.includes('nail')) reply="💅 Nail Art: 1,000 - 2,500 Rs. Luxury Nails.";
+    else if(low.includes('booking')||low.includes('book')) reply="✅ Booking confirm karne ke liye WhatsApp pe naam + date bhej dein: https://wa.me/923716649231";
+    body.innerHTML+=`<div class="msg msg-bot">${reply}</div>`;
+    body.scrollTop=body.scrollHeight;
+  },500);
+  body.scrollTop=body.scrollHeight;
+}
+document.getElementById('chatInput').addEventListener('keypress',function(e){if(e.key==='Enter') sendMsg();});
+</script>
 
 </body>
 </html>
